@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/MGTheTrain/terraform-provider-mgtt/mgtt"
+	"github.com/MGTheTrain/terraform-provider-mgtt-squashed/mgtt"
 	"github.com/stretchr/testify/assert"
 )
 

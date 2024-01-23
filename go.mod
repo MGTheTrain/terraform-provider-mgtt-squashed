@@ -1,4 +1,4 @@
-module github.com/MGTheTrain/terraform-provider-mgtt
+module github.com/MGTheTrain/terraform-provider-mgtt-squashed
 
 go 1.21.3
 
