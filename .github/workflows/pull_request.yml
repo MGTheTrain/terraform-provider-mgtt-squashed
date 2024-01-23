@@ -1,0 +1,30 @@
+name: Run scans and tests on Go repos
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+
+jobs:
+  ci-ct-job-for-go-repos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Install az
+        run: |
+          sudo apt-get install -y curl jq
+          sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      - name: Login as service principal
+        run: az login --service-principal -u ${{ secrets.ARM_CLIENT_ID }} -p ${{ secrets.ARM_CLIENT_SECRET }} --tenant ${{ secrets.ARM_TENANT_ID }}
+      - name: Retrieve and output acccess token
+        id: retrieve_access_token
+        run: echo "access_token=$(az account get-access-token | jq -r '.accessToken')" >> $GITHUB_OUTPUT
+      - name: Test Go repository
+        uses: MGTheTrain/public-github-actions/.github/actions/test-go-repository@main
+        with:
+          TEST_WORKING_DIRECTORY: ./mgtt/test
+        env:
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          AZURE_ACCESS_TOKEN: ${{ steps.retrieve_access_token.outputs.access_token }}

@@ -1,0 +1,10 @@
+go.sum
+build/**
+terraform-provider-mgtt**
+*exe
+lock.json
+terraform.tfstate**
+.terraform*
+crash.log
+secrets.cfg
+secrets.txt

@@ -1,0 +1,14 @@
+{
+    "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+    },
+    "kind": "StorageV2",
+    "location": "West Europe",
+    "properties": {
+        "keyPolicy": {
+            "keyExpirationPeriodInDays": 20
+        }
+    }
+}
+  

@@ -1,0 +1,17 @@
+name: Auto-formatting Go files
+
+on:
+  push:
+
+jobs:
+  set_stage:
+    name: Determine Stage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Auto-formatting Go files and linting
+        uses: MGTheTrain/public-github-actions/.github/actions/linting-and-auto-formatting-for-go@main
+        with:
+          WORKING_DIRECTORY: ./
+          GH_TOKEN: ${{ inputs.GH_TOKEN }}

@@ -1,0 +1,7 @@
+{
+    "properties": {
+      "keyPolicy": {
+        "keyExpirationPeriodInDays": 10
+      }
+    }
+  }
