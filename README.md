@@ -13,7 +13,7 @@ Sample repository implementing a terraform provider designed for managing resour
 
 ## Sqash commits with orphan branches
 
-Read trough [How to move a full Git repository](https://www.atlassian.com/git/tutorials/git-move-repository). We to only checkout the master branch.
+Read trough [How to move a full Git repository](https://www.atlassian.com/git/tutorials/git-move-repository). We need to only checkout the master branch.
 
 Create an orphan branch from the master (refer to [user456814 answer solution #1](https://stackoverflow.com/questions/1657017/how-to-squash-all-git-commits-into-one)):
 
