@@ -3,12 +3,28 @@
 ## Table of Contents
 
 - [Description](#description)
+- [Orphan branches](#orphan-branches)
 - [References](#references)
 - [How to use](#how-to-use)
 
 ## Description
 
-Sample repository implementing a terraform provider designed for managing resources in Azure and AWS
+Sample repository implementing a terraform provider designed for managing resources in Azure and AWS. Moreover, this should illustrate the process of consolidating multiple less descriptive commits into a single commit to maintain a cleaner Git history.  
+
+## Orphan branches
+
+Read trough [How to move a full Git repository](https://www.atlassian.com/git/tutorials/git-move-repository). We to only checkout the master branch.
+
+Create an orphan branch from the master (refer to [user456814 answer solution #1](https://stackoverflow.com/questions/1657017/how-to-squash-all-git-commits-into-one)):
+
+```sh
+git checkout --orphan orphan-branch master
+git add .
+git commit -m "Initial setup"
+git push --set-upstream origin orphan-branch
+```
+
+Delete the master `branch`. Derive from `orphan-branch -> develop -> release/0.1.0 -> master`.
 
 ## References
 
