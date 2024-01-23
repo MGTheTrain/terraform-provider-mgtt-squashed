@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Orphan branches](#orphan-branches)
+- [Sqash commits with orphan branches](#sqash-commits-with-orphan-branches)
 - [References](#references)
 - [How to use](#how-to-use)
 
@@ -11,7 +11,7 @@
 
 Sample repository implementing a terraform provider designed for managing resources in Azure and AWS. Moreover, this should illustrate the process of consolidating multiple less descriptive commits into a single commit to maintain a cleaner Git history.  
 
-## Orphan branches
+## Sqash commits with orphan branches
 
 Read trough [How to move a full Git repository](https://www.atlassian.com/git/tutorials/git-move-repository). We to only checkout the master branch.
 
@@ -24,7 +24,10 @@ git commit -m "Initial setup"
 git push --set-upstream origin orphan-branch
 ```
 
-Delete the master `branch`. Derive from `orphan-branch -> develop -> release/0.1.0 -> master`.
+Derive from `orphan-branch -> develop -> release/0.1.0`.
+Select `release/0.1.0` as temporary master branch in [Github repository settings](https://github.com/MGTheTrain/terraform-provider-mgtt-squashed/settings). 
+Delete the old `master` branch via ` git push origin --delete master`. 
+Derive from `release/0.1.0 -> master`.
 
 ## References
 
