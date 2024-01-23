@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 23-01-2024
+
+### Added
+
+/
+
+### Fixed
+
+/
+
+### Changed
+
+- adjust pathes refering to this repository in the go files
+- update [README.md](./README.md) title
+
+### Removed
+
+/
+
 ## [0.1.0] - 13-01-2024
 
 ### Added
