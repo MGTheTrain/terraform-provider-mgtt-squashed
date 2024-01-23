@@ -25,9 +25,12 @@ git push --set-upstream origin orphan-branch
 ```
 
 Derive from `orphan-branch -> develop -> release/0.1.0`.
-Select `release/0.1.0` as temporary master branch in [Github repository settings](https://github.com/MGTheTrain/terraform-provider-mgtt-squashed/settings). 
+Select `release/0.1.0` as temporary default branch in [Github repository settings](https://github.com/MGTheTrain/terraform-provider-mgtt-squashed/settings). 
 Delete the old `master` branch via ` git push origin --delete master`. 
-Derive from `release/0.1.0 -> master`.
+Additionally remove the local `master` branch  via `git branch -D master` and create a new local one via `git checkout -b "master"`.
+Derive from `release/0.1.0 -> master` and `git push --set-upstream origin master`.
+Finally select `master` as temporary default branch in [Github repository settings](https://github.com/MGTheTrain/terraform-provider-mgtt-squashed/settings). 
+
 
 ## References
 
